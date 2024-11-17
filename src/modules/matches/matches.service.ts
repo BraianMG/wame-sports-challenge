@@ -1,6 +1,6 @@
 import {
-  BadRequestException,
   Injectable,
+  InternalServerErrorException,
   NotFoundException,
 } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
@@ -22,7 +22,7 @@ export class MatchesService {
       const createdMatch = new this.matchModel(createMatchDto);
       return await createdMatch.save();
     } catch (error) {
-      throw new BadRequestException(error.message);
+      throw new InternalServerErrorException(error.message);
     }
   }
 
@@ -93,15 +93,20 @@ export class MatchesService {
 
       return updatedEntity;
     } catch (err) {
-      throw new BadRequestException(err.message);
+      if (err instanceof NotFoundException) {
+        throw err;
+      } else {
+        throw new InternalServerErrorException(err.message);
+      }
     }
   }
 
-  async remove(id: string): Promise<void> {
+  async remove(id: string): Promise<any> {
     try {
       await this.matchModel.updateOne({ _id: id }, { deletedAt: new Date() });
+      return { message: `${this.getEntityName()} deleted successfully` };
     } catch (error) {
-      throw new BadRequestException(error.message);
+      throw new InternalServerErrorException(error.message);
     }
   }
 }

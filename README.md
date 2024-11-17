@@ -29,7 +29,20 @@ mentioned above.
 ## Project setup
 
 ```bash
+# Install dependencies
 $ pnpm install
+
+# Create environment variables file (then define them)
+$ cp .env.example .env
+```
+
+## Database
+```bash
+# Create and start container in the background
+$ docker-compose up -d
+
+# Stop and remove container
+$ docker-compose down
 ```
 
 ## Compile and run the project
@@ -54,9 +67,23 @@ $ pnpm run test
 # e2e tests
 $ pnpm run test:e2e
 
-# test coverage
+# test coverage 
 $ pnpm run test:cov
 ```
+
+## API definition
+Base path for API v1: `/api/v1`
+
+Endpoints:
+- `POST:/matches` --> Create a match
+- `GET:/matches` --> Get all matches
+- `GET:/matches/:id` --> Get a specific match
+- `POST:/matches/search` --> Search matches based on different options
+- `PATCH:/matches/:id` --> Update a match
+- `DELETE:/matches/:id` --> Soft delete a match
+
+### Postman collection
+- [v1.0](/docs/postman_collection_v1_0.json)
 
 ## Stay in touch
 

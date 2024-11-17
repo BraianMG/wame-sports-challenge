@@ -1,0 +1,673 @@
+{
+	"info": {
+		"_postman_id": "6ea04931-a3eb-471e-9440-5a060dc370a3",
+		"name": "Matches API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9274239"
+	},
+	"item": [
+		{
+			"name": "matches",
+			"item": [
+				{
+					"name": "Create match",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"homeTeam\": \"Real Madrid\",\r\n    \"awayTeam\": \"Barcelona\",\r\n    \"dateTime\": \"2024-10-26T20:00:00.000Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/matches",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"matches"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create match",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"homeTeam\": \"Real Madrid\",\r\n    \"awayTeam\": \"Barcelona\",\r\n    \"dateTime\": \"2024-10-26T20:00:00.000Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/matches",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"matches"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "214"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d6-E/X5TN/jpbOWqCXJbxEBdm5zLFk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 17 Nov 2024 17:02:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"deletedAt\": null,\n    \"homeTeam\": \"Real Madrid\",\n    \"awayTeam\": \"Barcelona\",\n    \"dateTime\": \"2024-10-26T20:00:00.000Z\",\n    \"createdAt\": \"2024-11-17T17:02:30.100Z\",\n    \"updatedAt\": \"2024-11-17T17:02:30.100Z\",\n    \"id\": \"673a21a19ef7f810e62d6b18\"\n}"
+						}
+					]
+				},
+				{
+					"name": "All matches",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/matches",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"matches"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All matches",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/matches",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"matches"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2961"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b91-wPf3r6w0Gy53Scu+6FDvau68tuw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 17 Nov 2024 17:03:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"deletedAt\": null,\n        \"homeTeam\": \"Equipo C\",\n        \"awayTeam\": \"Equipo D\",\n        \"dateTime\": \"2024-11-17T21:00:00.000Z\",\n        \"createdAt\": \"2024-11-16T14:36:45.423Z\",\n        \"updatedAt\": \"2024-11-16T14:36:45.423Z\",\n        \"id\": \"6738add82387f503081912dc\"\n    },\n    {\n        \"deletedAt\": null,\n        \"homeTeam\": \"Equipo E\",\n        \"awayTeam\": \"Equipo F\",\n        \"dateTime\": \"2024-11-17T21:00:00.000Z\",\n        \"createdAt\": \"2024-11-16T22:38:22.772Z\",\n        \"updatedAt\": \"2024-11-16T22:38:22.772Z\",\n        \"id\": \"67391ede7ca05e8c21e8645c\"\n    },\n    {\n        \"deletedAt\": null,\n        \"homeTeam\": \"Equipo G\",\n        \"awayTeam\": \"Equipo H\",\n        \"dateTime\": \"2024-11-17T21:00:00.000Z\",\n        \"createdAt\": \"2024-11-16T22:38:26.355Z\",\n        \"updatedAt\": \"2024-11-16T22:38:26.355Z\",\n        \"id\": \"67391ee27ca05e8c21e8645e\"\n    },\n    {\n        \"deletedAt\": null,\n        \"homeTeam\": \"Equipo I\",\n        \"awayTeam\": \"Equipo J\",\n        \"dateTime\": \"2024-11-17T21:00:00.000Z\",\n        \"createdAt\": \"2024-11-16T22:38:29.943Z\",\n        \"updatedAt\": \"2024-11-16T22:38:29.943Z\",\n        \"id\": \"67391ee57ca05e8c21e86460\"\n    },\n    {\n        \"deletedAt\": null,\n        \"homeTeam\": \"Equipo K\",\n        \"awayTeam\": \"Equipo L\",\n        \"dateTime\": \"2024-11-17T21:00:00.000Z\",\n        \"createdAt\": \"2024-11-16T22:38:32.806Z\",\n        \"updatedAt\": \"2024-11-16T22:38:32.806Z\",\n        \"id\": \"67391ee87ca05e8c21e86462\"\n    },\n    {\n        \"deletedAt\": null,\n        \"homeTeam\": \"Equipo M\",\n        \"awayTeam\": \"Equipo N\",\n        \"dateTime\": \"2024-11-17T21:00:00.000Z\",\n        \"createdAt\": \"2024-11-16T22:38:36.371Z\",\n        \"updatedAt\": \"2024-11-16T22:38:36.371Z\",\n        \"id\": \"67391eec7ca05e8c21e86464\"\n    },\n    {\n        \"deletedAt\": null,\n        \"homeTeam\": \"Equipo O\",\n        \"awayTeam\": \"Equipo P\",\n        \"dateTime\": \"2024-11-17T21:00:00.000Z\",\n        \"createdAt\": \"2024-11-16T22:38:39.426Z\",\n        \"updatedAt\": \"2024-11-16T22:38:39.426Z\",\n        \"id\": \"67391eef7ca05e8c21e86466\"\n    },\n    {\n        \"deletedAt\": null,\n        \"homeTeam\": \"Equipo Q\",\n        \"awayTeam\": \"Equipo R\",\n        \"dateTime\": \"2024-11-17T21:00:00.000Z\",\n        \"createdAt\": \"2024-11-16T22:38:42.349Z\",\n        \"updatedAt\": \"2024-11-16T22:38:42.349Z\",\n        \"id\": \"67391ef27ca05e8c21e86468\"\n    },\n    {\n        \"deletedAt\": null,\n        \"homeTeam\": \"Equipo S\",\n        \"awayTeam\": \"Equipo T\",\n        \"dateTime\": \"2024-11-17T21:00:00.000Z\",\n        \"createdAt\": \"2024-11-16T22:38:45.260Z\",\n        \"updatedAt\": \"2024-11-16T22:38:45.260Z\",\n        \"id\": \"67391ef57ca05e8c21e8646a\"\n    },\n    {\n        \"deletedAt\": null,\n        \"homeTeam\": \"Equipo U\",\n        \"awayTeam\": \"Equipo V\",\n        \"dateTime\": \"2024-11-17T21:00:00.000Z\",\n        \"createdAt\": \"2024-11-16T22:38:48.586Z\",\n        \"updatedAt\": \"2024-11-16T22:38:48.586Z\",\n        \"id\": \"67391ef87ca05e8c21e8646c\"\n    },\n    {\n        \"deletedAt\": null,\n        \"homeTeam\": \"Equipo W\",\n        \"awayTeam\": \"Equipo X\",\n        \"dateTime\": \"2024-11-17T21:00:00.000Z\",\n        \"createdAt\": \"2024-11-16T22:38:56.291Z\",\n        \"updatedAt\": \"2024-11-16T22:38:56.291Z\",\n        \"id\": \"67391f007ca05e8c21e8646e\"\n    },\n    {\n        \"deletedAt\": null,\n        \"homeTeam\": \"Equipo Y\",\n        \"awayTeam\": \"Equipo Z\",\n        \"dateTime\": \"2024-11-17T21:00:00.000Z\",\n        \"createdAt\": \"2024-11-16T22:38:59.221Z\",\n        \"updatedAt\": \"2024-11-16T22:38:59.221Z\",\n        \"id\": \"67391f037ca05e8c21e86470\"\n    },\n    {\n        \"deletedAt\": null,\n        \"homeTeam\": \"Equipo AA\",\n        \"awayTeam\": \"Equipo BB\",\n        \"dateTime\": \"2024-11-17T20:00:00.000Z\",\n        \"createdAt\": \"2024-11-17T15:20:36.563Z\",\n        \"updatedAt\": \"2024-11-17T15:20:36.563Z\",\n        \"id\": \"673a09a4ca5028ef86481e32\"\n    },\n    {\n        \"deletedAt\": null,\n        \"homeTeam\": \"Real Madrid\",\n        \"awayTeam\": \"Barcelona\",\n        \"dateTime\": \"2024-10-26T20:00:00.000Z\",\n        \"createdAt\": \"2024-11-17T17:02:30.100Z\",\n        \"updatedAt\": \"2024-11-17T17:02:30.100Z\",\n        \"id\": \"673a21a19ef7f810e62d6b18\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "A match",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/matches/673a21a19ef7f810e62d6b18",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"matches",
+								"673a21a19ef7f810e62d6b18"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "A match",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/matches/673a21a19ef7f810e62d6b18",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"matches",
+										"673a21a19ef7f810e62d6b18"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "214"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d6-E/X5TN/jpbOWqCXJbxEBdm5zLFk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 17 Nov 2024 17:03:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"deletedAt\": null,\n    \"homeTeam\": \"Real Madrid\",\n    \"awayTeam\": \"Barcelona\",\n    \"dateTime\": \"2024-10-26T20:00:00.000Z\",\n    \"createdAt\": \"2024-11-17T17:02:30.100Z\",\n    \"updatedAt\": \"2024-11-17T17:02:30.100Z\",\n    \"id\": \"673a21a19ef7f810e62d6b18\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Search match",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"take\": 5,\r\n    \"skip\": 0,\r\n    \"quickFilter\": \"madrid\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/matches/search",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"matches",
+								"search"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Search match",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"take\": 5,\r\n    \"skip\": 0,\r\n    \"quickFilter\": \"madrid\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/matches/search",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"matches",
+										"search"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "236"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ec-sJrySEr3u2FmnsML2km4hF85IJw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 17 Nov 2024 17:05:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"total\": 1,\n    \"items\": [\n        {\n            \"deletedAt\": null,\n            \"homeTeam\": \"Real Madrid\",\n            \"awayTeam\": \"Barcelona\",\n            \"dateTime\": \"2024-10-26T20:00:00.000Z\",\n            \"createdAt\": \"2024-11-17T17:02:30.100Z\",\n            \"updatedAt\": \"2024-11-17T17:02:30.100Z\",\n            \"id\": \"673a21a19ef7f810e62d6b18\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Search match",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"take\": 5,\r\n    \"skip\": 0,\r\n    \"quickFilter\": \"b\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/matches/search",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"matches",
+										"search"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "449"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c1-ffOqx53CF9Rre5NYhra5xrTrH6k\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 17 Nov 2024 17:04:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"total\": 2,\n    \"items\": [\n        {\n            \"deletedAt\": null,\n            \"homeTeam\": \"Equipo AA\",\n            \"awayTeam\": \"Equipo BB\",\n            \"dateTime\": \"2024-11-17T20:00:00.000Z\",\n            \"createdAt\": \"2024-11-17T15:20:36.563Z\",\n            \"updatedAt\": \"2024-11-17T15:20:36.563Z\",\n            \"id\": \"673a09a4ca5028ef86481e32\"\n        },\n        {\n            \"deletedAt\": null,\n            \"homeTeam\": \"Real Madrid\",\n            \"awayTeam\": \"Barcelona\",\n            \"dateTime\": \"2024-10-26T20:00:00.000Z\",\n            \"createdAt\": \"2024-11-17T17:02:30.100Z\",\n            \"updatedAt\": \"2024-11-17T17:02:30.100Z\",\n            \"id\": \"673a21a19ef7f810e62d6b18\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Search match",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"take\": 5,\r\n    \"skip\": 0,\r\n    \"quickFilter\": \"o\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/matches/search",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"matches",
+										"search"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1077"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"435-Ix7JS+pZ2sAntburZoE8OwR6cII\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 17 Nov 2024 17:04:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"total\": 14,\n    \"items\": [\n        {\n            \"deletedAt\": null,\n            \"homeTeam\": \"Equipo C\",\n            \"awayTeam\": \"Equipo D\",\n            \"dateTime\": \"2024-11-17T21:00:00.000Z\",\n            \"createdAt\": \"2024-11-16T14:36:45.423Z\",\n            \"updatedAt\": \"2024-11-16T14:36:45.423Z\",\n            \"id\": \"6738add82387f503081912dc\"\n        },\n        {\n            \"deletedAt\": null,\n            \"homeTeam\": \"Equipo E\",\n            \"awayTeam\": \"Equipo F\",\n            \"dateTime\": \"2024-11-17T21:00:00.000Z\",\n            \"createdAt\": \"2024-11-16T22:38:22.772Z\",\n            \"updatedAt\": \"2024-11-16T22:38:22.772Z\",\n            \"id\": \"67391ede7ca05e8c21e8645c\"\n        },\n        {\n            \"deletedAt\": null,\n            \"homeTeam\": \"Equipo G\",\n            \"awayTeam\": \"Equipo H\",\n            \"dateTime\": \"2024-11-17T21:00:00.000Z\",\n            \"createdAt\": \"2024-11-16T22:38:26.355Z\",\n            \"updatedAt\": \"2024-11-16T22:38:26.355Z\",\n            \"id\": \"67391ee27ca05e8c21e8645e\"\n        },\n        {\n            \"deletedAt\": null,\n            \"homeTeam\": \"Equipo I\",\n            \"awayTeam\": \"Equipo J\",\n            \"dateTime\": \"2024-11-17T21:00:00.000Z\",\n            \"createdAt\": \"2024-11-16T22:38:29.943Z\",\n            \"updatedAt\": \"2024-11-16T22:38:29.943Z\",\n            \"id\": \"67391ee57ca05e8c21e86460\"\n        },\n        {\n            \"deletedAt\": null,\n            \"homeTeam\": \"Equipo K\",\n            \"awayTeam\": \"Equipo L\",\n            \"dateTime\": \"2024-11-17T21:00:00.000Z\",\n            \"createdAt\": \"2024-11-16T22:38:32.806Z\",\n            \"updatedAt\": \"2024-11-16T22:38:32.806Z\",\n            \"id\": \"67391ee87ca05e8c21e86462\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update match",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"awayTeam\": \"Equipo DD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/matches/6738add82387f503081912dc",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"matches",
+								"6738add82387f503081912dc"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update match",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"awayTeam\": \"Equipo DD\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/matches/6738add82387f503081912dc",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"matches",
+										"6738add82387f503081912dc"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "211"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d3-4TyX5HXwchKAB4ff8iIeUyq7nNc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 17 Nov 2024 17:06:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"deletedAt\": null,\n    \"homeTeam\": \"Equipo C\",\n    \"awayTeam\": \"Equipo DD\",\n    \"dateTime\": \"2024-11-17T21:00:00.000Z\",\n    \"createdAt\": \"2024-11-16T14:36:45.423Z\",\n    \"updatedAt\": \"2024-11-17T17:06:17.251Z\",\n    \"id\": \"6738add82387f503081912dc\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete match",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/matches/67391ede7ca05e8c21e8645c",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"matches",
+								"67391ede7ca05e8c21e8645c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete match",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/matches/67391ede7ca05e8c21e8645c",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"matches",
+										"67391ede7ca05e8c21e8645c"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28-2lx+CSg8UDmAiVgBahHMjyEaCpI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 17 Nov 2024 17:06:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Match deleted successfully\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
