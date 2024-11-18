@@ -1,0 +1,17 @@
+# Base image
+FROM node:18
+
+WORKDIR /usr/src/app
+
+COPY . .
+
+RUN npm install pnpm -g
+RUN pnpm install --frozen-lockfile
+
+RUN pnpm run build
+
+RUN rm -rf ./src
+
+EXPOSE 4000
+
+CMD ["pnpm", "run", "start:prod"]

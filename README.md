@@ -26,26 +26,32 @@ home team, away team, date, and time.
 mentioned above. 
 - Unit tests covering the core functionalities of the API.
 
-## Project setup
+## Define environment variables
 
 ```bash
-# Install dependencies
-$ pnpm install
-
 # Create environment variables file (then define them)
 $ cp .env.example .env
 ```
 
-## Database
+## Start services with docker-compose
+
+In this case the environment variable `DB_HOST` must be `database`
+
 ```bash
-# Create and start container in the background
-$ docker-compose up -d
+# Create and start container, add -d flag to do it in background
+$ docker-compose -f docker-compose.prod.yml up --build
 
 # Stop and remove container
-$ docker-compose down
+$ docker-compose -f docker-compose.prod.yml down
 ```
 
-## Compile and run the project
+With this everything is ready to consume the API
+
+## Other commands
+
+### Compile and run the project
+
+If you compile and run the API this way you will need to modify the `DB_HOST` environment variable to `localhost` or `127.0.0.1`, also comment out the `api` service from `docker-compose.prod.yml` and remove the container if you have created and run it before.
 
 ```bash
 # development
@@ -58,7 +64,9 @@ $ pnpm run start:dev
 $ pnpm run start:prod
 ```
 
-## Run tests
+### Run tests
+
+There are no `e2e tests` at the moment
 
 ```bash
 # unit tests
@@ -82,8 +90,16 @@ Endpoints:
 - `PATCH:/matches/:id` --> Update a match
 - `DELETE:/matches/:id` --> Soft delete a match
 
+### Match entity
+- `homeTeam`: string (mandatory and at least 3 characters)
+- `awayTeam`: string (mandatory and at least 3 characters)
+- `dateTime`: Date (mandatory and in ISO 8601 format, for example `2024-11-17T20:00:00.000Z`)
+
 ### Postman collection
 - [v1.0](/docs/postman_collection_v1_0.json)
+
+### Postman environment
+- [v1.0](/docs/development.postman_environment_v1_0.json)
 
 ## Stay in touch
 
